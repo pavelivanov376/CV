@@ -45,7 +45,7 @@
             grid-template-columns: auto 1fr;
             gap: 28px;
             align-items: center;
-            padding: 36px 40px 30px;
+            padding: 15px 40px 15px;
             border-bottom: 3px solid var(--accent);
             background: var(--white);
         }
@@ -197,10 +197,37 @@
         .interest { font-size: 0.83rem; color: var(--muted); margin-bottom: 5px; display: flex; align-items: flex-start; gap: 7px; }
         .interest i { color: var(--accent-light); margin-top: 2px; }
 
-        @media print {
+        <!-- @media print {
             body { background: white; }
             .page { box-shadow: none; margin: 0; border-radius: 0; }
-        }
+        } -->
+        
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
     </style>
 </head>
 <body>
@@ -214,7 +241,7 @@
         <div class="header-info">
             <h1>Pavel Ivanov</h1>
             <div class="title">Software Developer &nbsp;·&nbsp; SAP</div>
-            <p class="tagline">Backend-focused Software Engineer specializing in Java and Spring, with experience in SAPUI5 frontend development. Oracle Certified Professional committed to clean architecture, automated testing, and practical AI integration.</p>
+            <p class="tagline">Backend-focused Software Engineer specializing in Java and Spring, with experience in SAPUI5 frontend development. Oracle Certified Professional committed to clean architecture, automated testing, and AI integration.</p>
         </div>
     </header>
 
