@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
         :root {
             --accent: #1a3a5c;
             --accent-light: #2563a8;
@@ -20,7 +20,7 @@
             --tag-bg: #e8eef6;
             --tag-text: #1a3a5c;
         }
-
+ 
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg);
@@ -29,7 +29,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
+ 
         .page {
             max-width: 860px;
             margin: 32px auto;
@@ -38,7 +38,7 @@
             border-radius: 4px;
             overflow: hidden;
         }
-
+ 
         /* ── HEADER ── */
         header {
             display: grid;
@@ -49,11 +49,11 @@
             border-bottom: 3px solid var(--accent);
             background: var(--white);
         }
-
+ 
         .photo-wrap {
             flex-shrink: 0;
         }
-
+ 
         .photo-wrap img {
             width: 100px;
             height: 100px;
@@ -62,7 +62,7 @@
             border: 3px solid var(--accent);
             display: block;
         }
-
+ 
         .header-info h1 {
             font-family: 'DM Serif Display', serif;
             font-size: 2rem;
@@ -71,7 +71,7 @@
             letter-spacing: -0.5px;
             line-height: 1.1;
         }
-
+ 
         .header-info .title {
             font-size: 0.85rem;
             font-weight: 500;
@@ -81,14 +81,14 @@
             margin-top: 4px;
             margin-bottom: 8px;
         }
-
+ 
         .header-info .tagline {
             font-size: 0.875rem;
             color: var(--muted);
             max-width: 560px;
             line-height: 1.55;
         }
-
+ 
         /* ── CONTACT BAR ── */
         .contact-bar {
             display: flex;
@@ -97,7 +97,7 @@
             padding: 10px 40px;
             background: var(--accent);
         }
-
+ 
         .contact-bar a, .contact-bar span {
             color: rgba(255,255,255,0.88);
             text-decoration: none;
@@ -107,24 +107,24 @@
             gap: 6px;
             transition: color 0.15s;
         }
-
+ 
         .contact-bar a:hover { color: #fff; }
         .contact-bar i { font-size: 0.75rem; opacity: 0.75; }
-
+ 
         /* ── BODY ── */
         .body {
             display: grid;
             grid-template-columns: 1fr 260px;
             min-height: 600px;
         }
-
+ 
         .col-main { padding: 32px 36px 32px 40px; border-right: 1px solid var(--border); }
         .col-side { padding: 32px 28px 32px 28px; background: #f4f6fa; }
-
+ 
         /* ── SECTIONS ── */
         section { margin-bottom: 28px; }
         section:last-child { margin-bottom: 0; }
-
+ 
         h2 {
             font-size: 0.7rem;
             font-weight: 600;
@@ -135,16 +135,16 @@
             padding-bottom: 6px;
             border-bottom: 1px solid var(--border);
         }
-
+ 
         /* ── EXPERIENCE ── */
         .job { margin-bottom: 20px; }
         .job:last-child { margin-bottom: 0; }
-
+ 
         .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
         .job-title { font-weight: 600; font-size: 0.925rem; color: var(--text); }
         .job-company { font-weight: 500; color: var(--accent-light); font-size: 0.875rem; }
         .job-date { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
-
+ 
         .job-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
         .tag {
             font-size: 0.72rem;
@@ -154,20 +154,43 @@
             padding: 2px 9px;
             border-radius: 20px;
         }
-
-        /* ── EDUCATION ── */
-        .edu { margin-bottom: 16px; }
+ 
+        .job-bullets {
+            margin-top: 7px;
+            padding-left: 16px;
+            list-style: none;
+        }
+ 
+        .job-bullets li {
+            font-size: 0.835rem;
+            color: var(--muted);
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 10px;
+            line-height: 1.5;
+        }
+ 
+        .job-bullets li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+        }
+ 
+        
+        .edu-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+        
         .edu:last-child { margin-bottom: 0; }
         .edu-degree { font-weight: 600; font-size: 0.9rem; }
         .edu-school { color: var(--accent-light); font-size: 0.86rem; font-weight: 500; margin-top: 1px; }
         .edu-date { font-size: 0.78rem; color: var(--muted); margin-top: 1px; }
         .edu-note { font-size: 0.78rem; color: var(--muted); margin-top: 2px; font-style: italic; }
-
+ 
         /* ── SKILLS ── */
         .skills-group { margin-bottom: 14px; }
         .skills-group-label { font-size: 0.75rem; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
+ 
         .skill-tag {
             font-size: 0.75rem;
             font-weight: 500;
@@ -177,58 +200,75 @@
             padding: 3px 10px;
             border-radius: 3px;
         }
-
+ 
         /* ── CERTS ── */
         .cert { font-size: 0.83rem; margin-bottom: 8px; display: flex; gap: 8px; align-items: flex-start; }
         .cert i { color: var(--accent-light); margin-top: 2px; flex-shrink: 0; }
-
+ 
         /* ── LANGUAGES ── */
         .lang-item { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.83rem; }
         .lang-name { font-weight: 500; }
         .lang-level { color: var(--muted); font-size: 0.78rem; }
-
+ 
         /* ── PROJECT ── */
         .project-name { font-weight: 600; font-size: 0.875rem; }
         .project-desc { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
         .project-link { font-size: 0.78rem; color: var(--accent-light); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; }
         .project-link:hover { text-decoration: underline; }
-
+ 
         /* ── INTERESTS ── */
         .interest { font-size: 0.83rem; color: var(--muted); margin-bottom: 5px; display: flex; align-items: flex-start; gap: 7px; }
         .interest i { color: var(--accent-light); margin-top: 2px; }
-
-        <!-- @media print {
-            body { background: white; }
-            .page { box-shadow: none; margin: 0; border-radius: 0; }
-        } -->
-        
+ 
 @page {
     size: A4;
-    margin: 0;
+    margin: 8mm; /* small margins */
 }
 
 @media print {
+
     html, body {
         width: 210mm;
         height: 297mm;
     }
 
     body {
+        zoom: 0.92; /* shrink slightly to guarantee 1 page */
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        background: white;
     }
 
     .page {
         margin: 0;
         box-shadow: none;
         border-radius: 0;
+        width: 100%;
+        max-width: none;
     }
 
     section {
         page-break-inside: avoid;
+        break-inside: avoid;
     }
-}
-    </style>
+
+    .job {
+        page-break-inside: avoid;
+    }
+
+    /* tighten spacing slightly */
+    .col-main { padding: 24px 28px 24px 32px; }
+    .col-side { padding: 24px 20px 24px 20px; }
+
+    section { margin-bottom: 20px; }
+    .job { margin-bottom: 14px; }
+    .job-bullets li { margin-bottom: 2px; }
+
+    h2 {
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+    }
+}    </style>
 </head>
 <body>
 <div class="page">
@@ -270,16 +310,16 @@
                         </div>
                         <div class="job-date">05/2024 – Present</div>
                     </div>
-                    <div class="job-tags">
-                        <span class="tag">Java Backend Development</span>
-                        <span class="tag">Technical Mentoring</span>
-                        <span class="tag">Internal Technical Trainer</span>
-                        <span class="tag">End-to-End Feature Ownership</span>
-                        <span class="tag">SAPUI5 Frontend Development</span>
-                        <span class="tag">AI/LLM Integration</span>
-                        <span class="tag">Customer Issue Analysis & Resolution</span>
-                        <span class="tag">Automated Testing</span>
-                    </div>
+                    <ul class="job-bullets">
+                        <li>Own epics end-to-end — from clarifying requirements and designing solution architecture to implementation, testing, and production delivery</li>
+                        <li>Contribute to technical decision making</li>
+                        <li>Improve system reliability through automated testing (unit, integration, UI)</li>
+                        <li>Mentor team members and actively support knowledge sharing within the team</li>
+                        <li>Proactively identify improvement opportunities in code structure and development workflow</li>
+                        <li>Cross-team collaboration</li>
+                        <li>Explore and propose AI/LLM integrations into workflows and functionalities</li>
+                        <li>Internal Trainer</li>
+                    </ul>
                 </div>
 
                 <div class="job">
@@ -290,12 +330,12 @@
                         </div>
                         <div class="job-date">06/2023 – 05/2024</div>
                     </div>
-                     <div class="job-tags">
-                        <span class="tag">Java Backend Development</span>
-                        <span class="tag">SAPUI5 Frontend Development</span>
-                        <span class="tag">Customer Issue Analysis & Resolution</span>
-                        <span class="tag">Automated Testing</span>
-                    </div>
+                    <ul class="job-bullets">
+                        <li>Developed Java backend and SAPUI5 frontend for enterprise applications</li>
+                        <li>Diagnosed and resolved complex customer-reported issues</li>
+                        <li>Expanded automated test coverage</li>
+                        <li>Contributed to feature design discussions and implementation planning</li>
+                    </ul>
                 </div>
 
                 <div class="job">
@@ -306,51 +346,67 @@
                         </div>
                         <div class="job-date">02/2022 – 06/2023</div>
                     </div>
-                     <div class="job-tags">
-                        <span class="tag">Java Backend Development</span>
-                        <span class="tag">Automated Testing</span>
-                    </div>
+                    <ul class="job-bullets">
+                        <li>Implemented backend features in Java and contributed to automated testing</li>
+                    </ul>
                 </div>
             </section>
 
             <section>
                 <h2>Education</h2>
-
+ 
                 <div class="edu">
-                    <div class="edu-degree">M.Sc. IT Project Management</div>
-                    <div class="edu-school">New Bulgarian University</div>
-                    <div class="edu-date">10/2023 – 05/2025</div>
-                    <div class="edu-note">Agile Methodologies, Software Project Management, Leadership Fundamentals</div>
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-degree">M.Sc. IT Project Management</div>
+                            <div class="edu-school">New Bulgarian University</div>
+                            <div class="edu-note">Agile, Business Analysis, People Management</div>
+                        </div>
+                        <div class="edu-date">10/2023 – 05/2025</div>
+                    </div>
                 </div>
-
+ 
                 <div class="edu">
-                    <div class="edu-degree">B.Sc. Computer Systems and Technologies</div>
-                    <div class="edu-school">Technical University of Sofia</div>
-                    <div class="edu-date">10/2019 – 06/2023</div>
-                    <div class="edu-note">Object-Oriented Programming, Data Structures & Algorithms, Operating Systems, Computer Architecture</div>
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-degree">B.Sc. Computer Systems and Technologies</div>
+                            <div class="edu-school">Technical University of Sofia</div>
+                            <div class="edu-note">OOP, Data Structures, Algorithms, OS</div>
+                        </div>
+                        <div class="edu-date">10/2019 – 06/2023</div>
+                    </div>
                 </div>
-
+ 
                 <div class="edu">
-                    <div class="edu-degree">Pedagogy of Teaching Mathematics &amp; Informatics</div>
-                    <div class="edu-school">Center for Professional Development at UFT</div>
-                    <div class="edu-date">09/2021 – 06/2022 &nbsp;·&nbsp; Postgraduate Qualification</div>
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-degree">Pedagogy of Teaching Mathematics &amp; Informatics</div>
+                            <div class="edu-school">Center for Professional Development at UFT</div>
+                            <div class="edu-note">Postgraduate Qualification</div>
+                        </div>
+                        <div class="edu-date">09/2021 – 06/2022</div>
+                    </div>
                 </div>
-
+ 
                 <div class="edu">
-                    <div class="edu-degree">Java Web Development Course Path</div>
-                    <div class="edu-school">Software University (SoftUni)</div>
-                    <div class="edu-date">09/2019 – 06/2023</div>
+                    <div class="edu-header">
+                        <div>
+                            <div class="edu-degree">Java Web Development Course Path</div>
+                            <div class="edu-school">Software University (SoftUni)</div>
+                        </div>
+                        <div class="edu-date">09/2019 – 06/2023</div>
+                    </div>
                 </div>
             </section>
 
-            <section>
+            <!-- <section>
                 <h2>Personal Projects</h2>
                 <div class="project-name">MyCloud Drive</div>
                 <div class="project-desc">Personal project (2022). Designed and implemented a cloud-style file storage web application using Java and Spring Boot.</div>
                 <a class="project-link" href="https://github.com/pavelivanov376/MyCloud" target="_blank">
                     <i class="fab fa-github"></i> github.com/pavelivanov376/MyCloud
                 </a>
-            </section>
+            </section> -->
 
         </div>
 
@@ -365,12 +421,13 @@
                         <span class="skill-tag">Java EE</span>
                         <span class="skill-tag">Spring</span>
                         <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Conceptual Work</span>
                     </div>
                 </div>
                 <div class="skills-group">
                     <div class="skills-group-label">Frontend</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">JavaScript/TypeScript</span>
                         <span class="skill-tag">SAPUI5</span>
                     </div>
                 </div>
@@ -379,7 +436,7 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
-						<span class="skill-tag">Jenkins</span>
+						<span class="skill-tag">Jenkins/GitHub Actions</span>
                         <span class="skill-tag">Linux</span>
                     </div>
                 </div>
